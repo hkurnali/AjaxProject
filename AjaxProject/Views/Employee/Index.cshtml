@@ -1,0 +1,31 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<h1>Index</h1>
+<button type="button" id="btnlist" class="btn btn-primary">Personel Listesi</button>
+<button type="button" id="btnadd" class="btn btn-info">Personel Ekle</button>
+<button type="button" id="btndelete" class="btn btn-denger">Personel Sil </button>
+<button type="button" id="btnget" class="btn btn-dark">Personel Getir</button>
+<button type="button" id="btnupdate" class="btn btn-success">Personel Güncelle</button>
+<br/>
+
+<div id="employelist">
+
+</div>
+
+<script>
+    $("#btnlist").click(function(){
+        $.ajax({
+            contentType="application/json",
+            dataType:"Json",
+            type:"Get",
+            url:"/Employee/EmployeList/",
+            success:function()
+
+        })
+    })
+
+</script>
